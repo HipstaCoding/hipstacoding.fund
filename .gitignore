@@ -1,1 +1,3 @@
 .env
+curls.txt
+node_modules/**
