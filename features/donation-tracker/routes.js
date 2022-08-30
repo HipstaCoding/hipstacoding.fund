@@ -7,7 +7,7 @@ const log = require('loglevel');
 router.get('/', async function(req, res, next) {
   const bankaID = req.headers["banka-id"];
 
-  if (bankaID) {
+  if (!bankaID) {
     res.status(400).send({
       code: 100,
       message: "There are header `banka-id`"
