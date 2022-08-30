@@ -6,8 +6,14 @@ const log = require('loglevel');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   const bankaID = req.headers["banka-id"];
-  console.log('process.env.TOKEN', process.env.TOKEN)
-  console.log('bankaID', bankaID)
+
+  if (bankaID) {
+    res.status(400).send({
+      code: 100,
+      message: "There are header `banka-id`"
+    })
+  }
+
   const infoResponse = await fetch('https://api.monobank.ua/personal/client-info', {
     headers: {
       'X-Token':  process.env.TOKEN,
