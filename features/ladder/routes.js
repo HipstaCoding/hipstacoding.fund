@@ -7,7 +7,7 @@ const { createLadderFromInvoice } = require('./service');
 router.get('/', async function(req, res, next) {
   const invoiceResponse = await fetch('https://api.monobank.ua/personal/statement/S1SeqlvK0QmE_Qb-cPkL6-Xbae2FxPo/1656194400', {
     headers: {
-      'X-Token': 'u0WBxsrjl7qlugwczfbJ_LPq1lP_j7Po8FW79j63LjFk',
+      'X-Token': process.env.TOKEN,
       'Content-Type': 'application/json'
     }
   })

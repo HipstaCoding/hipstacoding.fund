@@ -106,5 +106,5 @@ function onListening() {
   //   ? 'pipe ' + addr
   //   : 'port ' + addr.port;
 
-  debug('Listening on http://localhost:' +  addr.port);
+  console.log('Listening on http://localhost:' +  addr.port);
 }
