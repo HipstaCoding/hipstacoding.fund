@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/webhook');
@@ -11,6 +12,9 @@ var ladderRouter = require('./features/ladder/routes');
 var donationTrackerRouter = require('./features/donation-tracker/routes');
 
 var app = express();
+
+//cors
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
