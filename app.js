@@ -13,8 +13,13 @@ var donationTrackerRouter = require('./features/donation-tracker/routes');
 
 var app = express();
 
-//cors
+// CORS
 app.use(cors())
+
+// cache for 60 second to reduce load to server for all requests
+app.use((_, res, next) => {
+  res.set('Cache-control', 'public, max-age=60')
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
