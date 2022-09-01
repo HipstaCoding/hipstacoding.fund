@@ -18,7 +18,8 @@ app.use(cors())
 
 // cache for 60 second to reduce load to server for all requests
 app.use((_, res, next) => {
-  res.set('Cache-control', 'public, max-age=60')
+  res.set('Cache-control', 'public, max-age=60');
+  next();
 })
 
 // view engine setup
