@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var indexRouter = require('./routes/index');
+var socialSharingRouter = require('./features/social-sharing/routes');
 var usersRouter = require('./routes/webhook');
 var ladderRouter = require('./features/ladder/routes');
 var donationTrackerRouter = require('./features/donation-tracker/routes');
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/ladder', ladderRouter);
+app.use('/social-sharing', socialSharingRouter);
 app.use('/webhook', usersRouter);
 app.use('/donation-tracker', donationTrackerRouter);
 

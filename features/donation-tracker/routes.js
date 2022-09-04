@@ -23,7 +23,7 @@ router.get('/', async function(req, res, next) {
 
   if (!infoResponse.ok) {
     if (infoResponse.status === 403) {
-      const text =await infoResponse.text();
+      const text = await infoResponse.text();
       log.error(text);
     }
     log.error('Response error status: ' + infoResponse.status)
