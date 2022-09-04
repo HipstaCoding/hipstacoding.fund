@@ -4,7 +4,17 @@ const nodeHtmlToImage = require('node-html-to-image');
 
 router.get('/images/facebook', async function(req, res) {
   const image = await nodeHtmlToImage({
-    html: '<html><body><div>Check out what I just did! #cool</div></body></html>',
+    html: `<html>
+    <head>
+    <style>
+      body {
+        width: 1200px;
+        height: 627px;
+      }
+    </style>
+  </head>
+    <body style="background-color:red;"><div>Check out what I just did! #cool</div></body></html>
+    `,
     puppeteerArgs: {
       args: ['--no-sandbox']
     }
