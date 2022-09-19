@@ -39,7 +39,7 @@ const getInstaStoryParams = async () => {
 };
 
 async function createInstagramStoryImage(jar) {
-  console.log("createInstagramStoryImage 1");
+
   const promises = [
     getInstaStoryParams(),
     getPageTemplate(INSTA_STORY_TEMPLATE_HTML),

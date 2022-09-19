@@ -15,7 +15,6 @@ const socialSharingRouter = require("./features/social-sharing/routes");
 const usersRouter = require("./features/subscription/router");
 const ladderRouter = require("./features/ladder/routes");
 const donationTrackerRouter = require("./features/donation-tracker/routes");
-
 const app = express();
 
 // CORS
