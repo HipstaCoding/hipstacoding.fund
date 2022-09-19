@@ -2,7 +2,6 @@ const nodeHtmlToImage = require("node-html-to-image");
 const fs = require("fs/promises");
 const font2base64 = require("node-font2base64");
 
-const getMonobankClientData = require("../donation-tracker/getMonobankClientInfo");
 const formatMonobankData = require("../donation-tracker/formatMonobankData");
 const { imageFromBufferToBase64 } = require("../../utils/toBase64");
 
@@ -20,13 +19,15 @@ const CSS_FILES = [VARIABLES_CSS, OVERRIDES_CSS, COMPONENTS_CSS, INDEX_CSS, STOR
 const getPageTemplate = (pagePath) => fs.readFile(pagePath, { encoding: "utf-8" });
 
 const getInstaStoryParams = async () => {
-  const font = font2base64.encodeToDataUrlSync("views/fonts/fonts.ttf");
-
+  console.log("getInstaStoryParams 0");
+  const font = await font2base64.encodeToDataUrl("views/fonts/fonts.ttf");
+  console.log("getInstaStoryParams 1");
   const [imageContent, ...cssPages] = await Promise.all(
     [fs.readFile(HERO_IMG)].concat(
       CSS_FILES.map((path) => fs.readFile(path, { encoding: "utf-8" }))
     )
   );
+  console.log("getInstaStoryParams 2");
   const css = cssPages.join("\n");
   const heroImg = imageFromBufferToBase64(imageContent);
 
@@ -37,15 +38,17 @@ const getInstaStoryParams = async () => {
   };
 };
 
-async function createInstagramStoryImage() {
-  const [{ font, css, heroImg }, page, jar] = await Promise.all([
+async function createInstagramStoryImage(jar) {
+  console.log("createInstagramStoryImage 1");
+  const promises = [
     getInstaStoryParams(),
     getPageTemplate(INSTA_STORY_TEMPLATE_HTML),
-    getMonobankClientData(),
-  ]);
+  ];
+  const [{ font, css, heroImg }, page] = await Promise.all(promises);
+  console.log("createInstagramStoryImage 2");
 
   const data = formatMonobankData(jar);
-
+  console.log("before image");
   await nodeHtmlToImage({
     output: "public/images/story.jpg",
     html: page,
@@ -59,6 +62,9 @@ async function createInstagramStoryImage() {
       ...data,
     },
   });
+  console.log("after image");
+
+  return;
 }
 
 module.exports = {

@@ -7,6 +7,8 @@ const logger = require("morgan");
 const cors = require("cors");
 
 const { createInstagramStoryImage } = require("./features/social-sharing/instagram-story");
+const subscribe = require("./features/subscription/subscribe");
+const getMonobankClientData = require("./features/donation-tracker/getMonobankClientInfo");
 
 const indexRouter = require("./routes/index");
 const socialSharingRouter = require("./features/social-sharing/routes");
@@ -46,7 +48,15 @@ app.use(function (err, req, res, next) {
   next(createError(404));
 });
 
-createInstagramStoryImage();
+getMonobankClientData()
+  .then((jar) => {
+    console.log('1 JARRR', jar)
+    return createInstagramStoryImage(jar);
+  })
+  .then(() => {
+    console.log('2 JARRR')
+    subscribe()
+  });
 
 // error handler
 app.use(function (err, req, res, next) {

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const getMonobankClientData = require("./getMonobankClientInfo");
+
+// TODO
 const formatMonobankData = require("./formatMonobankData");
 
 /* GET home page. */

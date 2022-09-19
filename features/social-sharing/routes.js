@@ -6,14 +6,18 @@ const getMonobankClientData = require("../donation-tracker/getMonobankClientInfo
 const formatMonobankData = require("../donation-tracker/formatMonobankData");
 
 router.get("/images/instagram/story", async function (_req, res) {
+  console.log('1')
   const [{ font, css, heroImg }, jar] = await Promise.all([
     getInstaStoryParams(),
     getMonobankClientData(),
   ]);
 
-  const data = formatMonobankData(jar);
 
-  res.render("social-sharing/story", {
+  console.log('2')
+  const data = formatMonobankData(jar);
+  console.log('3')
+  
+  return res.render("social-sharing/story", {
     css,
     heroImg,
     font,
