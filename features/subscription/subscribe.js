@@ -1,10 +1,12 @@
 const fetch = require('node-fetch');
 
 module.exports = async function subscribe() {
+  const webHookUrl = `${process.env.API_URL}/webhook`;
+  console.log('webHookUrl', await response.text())
   const response = await fetch('https://api.monobank.ua/personal/webhook', {
     method: 'POST',
     body: JSON.stringify({ 
-      webHookUrl: `${process.env.API_URL}/webhook`,
+      webHookUrl,
     }),
     headers: {
       'X-Token':  process.env.TOKEN
