@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Hipsta Coding Fund | Збір на дрон в Херсон">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hipstacoding.fund/">
+  <meta property="og:image" content="https://hipstacoding-fund.herokuapp.com/social-sharing/images/facebook">
+  <title>Hipsta Coding Fund | Збір на дрон в Херсон</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/styles/variables.css">
+  <link rel="stylesheet" href="/styles/fonts.css">
+  <link rel="stylesheet" href="/styles/overrides.css">
+  <link rel="stylesheet" href="/styles/components.css">
+  <link rel="stylesheet" href="/styles/index.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+</head>
+
+<body class="main-page">
+  <header>
+    <figure class="hero-image">
+      <img src="images/mavic3.jpg" width="576" height="384" alt="mavic 3 drone photo" />
+      <figcaption>
+        © Photo by <a href="https://unsplash.com/photos/50baB1wPyKA">Jeremy Bishop</a> on
+        Unsplash
+      </figcaption>
+    </figure>
+  </header>
+  <main>
+    <section class="content">
+      <h1>HipstaCoding.school збирає на дрон Mavic 3 для XX спецбригади під Херсоном!</h1>
+      <div class="donation-tracker" id="dt">
+        <div class="donation-title">
+          <span class="donation-title-collected">Зібрано (UAH)</span>
+          <span class="donation-title-remains">Залишилось (UAH)</span>
+        </div>
+        <div class="donation-tracker-container">
+          <div class="donation-tracker-collected-bar"></div>
+          <span class="donation-tracker-collected" id="dt-collected">0</span>
+          <span class="donation-tracker-remains" id="dt-remains">0</span>
+        </div>
+        <div class="donation-tracker-description">
+          <span class="donation-tracker-collected-%" id="dt-collected-percent">0%</span>
+          <span class="donation-tracker-total" id="dt-total">83 000</span>
+        </div>
+        <div class="disclaimer">
+          * актуальні данні з банки Monobank
+        </div>
+      </div>
+      <a class="mono-pay" href="https://send.monobank.ua/jar/3xqXDhtdzj"></a>
+    </section>
+    <section class="requisites">
+      <h2 class="requisites-titles">Додаткові реквезити**:</h2>
+      <p class="disclaimer">** не будуть відображатись у треку</p>
+      <div class="requisite monobank">
+        <label for="monobank" data-clipboard-target="#monobank">
+          Monobank
+          <div class="requisite-field-container">
+            <input id="monobank" class="requisite-field" value="4242 4242 4242 4242" readonly>
+            <button class="requisite-copy-icon">
+              <i class="fa-regular fa-copy fa-xl"></i>
+            </button>
+          </div>
+          На ім'я: Олексій Шипінов
+        </label>
+      </div>
+      <div class="requisite privatbank">
+        <label for="privatbank" data-clipboard-target="#privatbank">
+          PrivatBank
+          <div class="requisite-field-container">
+            <input id="privatbank" class="requisite-field" value="4444 4444 4444 4444" readonly>
+            <button class="requisite-copy-icon">
+              <i class="fa-regular fa-copy fa-xl"></i>
+            </button>
+          </div>
+          На ім'я: Олексій Шипінов
+        </label>
+      </div>
+      <div class="requisite paypal">
+        <label for="paypal" data-clipboard-target="#paypal">
+          PayPal
+          <div class="requisite-field-container">
+            <input id="paypal" class="requisite-field" value="elon@hipstacoding.fund" readonly>
+            <button class="requisite-copy-icon">
+              <i class="fa-regular fa-copy fa-xl"></i>
+            </button>
+          </div>
+          На ім'я: Олексій Шипінов
+        </label>
+      </div>
+      <div class="requisite banka">
+        <label for="banka-monobanka" data-clipboard-target="#banka-monobanka">
+          Банка монобанку
+          <div class="requisite-field-container">
+            <input id="banka-monobanka" class="requisite-field" value="lewkan@hipstacoding.fund"
+              readonly>
+            <button class="requisite-copy-icon">
+              <i class="fa-regular fa-copy fa-xl"></i>
+            </button>
+          </div>
+          На дрон Mavic 3
+        </label>
+      </div>
+    </section>
+    <section class="info">
+      <h2>Інформаційна допомога</h2>
+      Ще більще ніж грошима ви можете допомогти, якщо поширите інформацію о соціальні мережі.
+      <div class="icons">
+        <a class="icon-button" href="./instagram/index.html"><i class="fa-brands fa-2x fa-instagram"></i></a>
+        <a class="icon-button"><i class="fa-brands fa-2x fa-twitter"></i></a>
+        <a class="icon-button"><i class="fa-brands fa-2x fa-facebook"></i></a>
+        <a class="icon-button"><i class="fa-brands fa-2x fab fa-facebook-messenger"></i></a>
+        <a class="icon-button"><i class="fa-brands fa-2x fab fa-telegram"></i></a>
+        <a class="icon-button"><i class="fa-brands fa-2x fab fa-viber"></i></a>
+      </div>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/54d3c7c785.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="./js/donation-tracker/functions.js"></script>
+  <script src="./js/donation-tracker/index.js"></script>
+</body>
+
+</html>

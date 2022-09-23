@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hipsta Coding Fund | Instagram Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/variables.css" />
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/overrides.css" />
+    <link rel="stylesheet" href="./story.css" />
+  </head>
+  <body>
+    <img src="/images/mavic3.jpg" alt="mavic 3 photo" width="1080" height="680" />
+    <main>
+      <h1>HipstaCoding.school збирає на дрон Mavic 3 для XX спецбригади під Херсоном!</h1>
+      <h2>переходь за ссилкою:</h2>
+      <div class="link-placeholder">
+
+      </div>
+    </main>
+    <div class="donation-tracker" id="dt">
+      <div class="donation-title">
+        <span class="donation-title-collected">Зібрано (UAH)</span>
+        <span class="donation-title-remains">Залишилось (UAH)</span>
+      </div>
+      <div class="donation-tracker-container">
+        <div class="donation-tracker-collected-bar"></div>
+        <span class="donation-tracker-collected" id="dt-collected">0</span>
+        <span class="donation-tracker-remains" id="dt-remains">0</span>
+      </div>
+      <div class="donation-tracker-description">
+        <span class="donation-tracker-collected-%" id="dt-collected-percent">0%</span>
+        <span class="donation-tracker-total" id="dt-total">83 000</span>
+      </div>
+      <div class="disclaimer">
+        * актуальні данні з банки Monobank
+      </div>
+    </div>
+    <script src="https://unpkg.com/html-to-image@1.10.8/dist/html-to-image.js"></script>
+    <script src="/js/donation-tracker/functions.js"></script>
+    <script src="./story.js"></script>
+    <script src="./story.js"></script>
+  </body>
+</html>

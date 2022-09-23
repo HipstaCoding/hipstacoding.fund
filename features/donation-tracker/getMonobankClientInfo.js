@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const NodeCache = require("node-cache");
 
-const cache = new NodeCache({ stdTTL: 120 });
+const cache = new NodeCache({ stdTTL: 60 });
 
 function getJar(data, bankaID) {
   if (!data && !data.jars) return null;
