@@ -15,16 +15,16 @@ const socialSharingRouter = require("./features/social-sharing/routes");
 const usersRouter = require("./features/subscription/router");
 const ladderRouter = require("./features/ladder/routes");
 const donationTrackerRouter = require("./features/donation-tracker/routes");
+const nocache = require('nocache');
+
 const app = express();
 
 // CORS
 app.use(cors());
+// disable cache
+app.use(nocache());
 
-// cache for 60 second to reduce load to server for all requests
-app.use((_, res, next) => {
-  res.set("Cache-control", "public, max-age=60");
-  next();
-});
+app.set('etag', false);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

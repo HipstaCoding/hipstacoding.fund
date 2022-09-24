@@ -1,6 +1,7 @@
 const getMonobankClientData = require("../donation-tracker/getMonobankClientInfo");
 const { createInstagramStoryImage } = require("../social-sharing/instagram-story");
 const io = require("../../io");
+const cache = require('../../utils/cache');
 
 module.exports = async function onSubscribe(data) {
   const jar = await getMonobankClientData();
@@ -10,8 +11,11 @@ module.exports = async function onSubscribe(data) {
     return;
   }
 
-  console.log('data.statementItem.balance', data.statementItem.balance)
+  console.log('data.statementItem.balance', data.statementItem.balance);
   jar.balance = data.statementItem.balance;
-  io.emit("donate", jar.balance)
+  io.emit("donate", jar.balance);
+
+  cache.set('jar', jar);
+
   await createInstagramStoryImage(jar);
 }

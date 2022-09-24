@@ -1,7 +1,5 @@
 const fetch = require('node-fetch');
-const NodeCache = require("node-cache");
-
-const cache = new NodeCache({ stdTTL: 60 });
+const cache = require('../../utils/cache');
 
 function getJar(data, bankaID) {
   if (!data && !data.jars) return null;
@@ -11,13 +9,10 @@ function getJar(data, bankaID) {
 
 async function getMonobankClientData() {
   const bankaID = process.env.BANKA_ID;
-  const cachedResponse = cache.get('client-info');
-  console.log('if cachedResponse exists', !!cachedResponse)
+  const cachedJar = cache.get('jar');
+  console.log('if cachedResponse exists', !!cachedJar)
   
-  if (cachedResponse) {
-    const jar = getJar(cachedResponse, bankaID);
-    return jar;
-  }
+  if (cachedJar) return cachedJar;
 
   const infoResponse = await fetch('https://api.monobank.ua/personal/client-info', {
     headers: {
@@ -37,13 +32,13 @@ async function getMonobankClientData() {
 
 
   const clientData = await infoResponse.json();
-
-  cache.set('client-info', clientData);
-
-  const jar = getJar(clientData, bankaID);
   
-  if (!jar) throw Error();
+  const jar = getJar(clientData, bankaID);
 
+  if (!jar) throw Error();
+  
+  cache.set('jar', jar);
+  
   return jar;
 }
 
