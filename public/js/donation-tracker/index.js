@@ -1,12 +1,17 @@
-getDonationData().then(res => {
-  render(res);
-  const socket = io();
+const socket = io();
 
-  socket.on("donate", (newBalance) => {
-    animateNumber(newBalance / 100, (n) => {
-      const format = Intl.NumberFormat("uk-UK").format; 
-      const balanceFormatted = format(n);
-      document.getElementById('dt-collected').textContent = balanceFormatted;
-    }, res.balance / 100)
-  });
+let balance = 0;
+
+socket.on("donate", (newBalance) => {
+  console.log("DONATE", newBalance)
+  animateNumber(newBalance / 100, (n) => {
+    const format = Intl.NumberFormat("uk-UK").format; 
+    const balanceFormatted = format(n);
+    document.getElementById('dt-collected').textContent = balanceFormatted;
+  }, window.balance / 100)
+});
+
+getDonationData().then(res => {
+  window.balance = res.balance;
+  render(res);
 })

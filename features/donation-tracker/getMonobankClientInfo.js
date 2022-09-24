@@ -29,7 +29,8 @@ async function getMonobankClientData() {
   if (!infoResponse.ok) {
     if (infoResponse.status === 429) {
 
-      throw new Error(429);
+      // throw new Error(429);
+      return console.error(429)
     }
     throw new Error(500);
   }
