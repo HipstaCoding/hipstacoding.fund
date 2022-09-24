@@ -9,6 +9,7 @@ socket.on("donate", (newBalance) => {
     const balanceFormatted = format(n);
     document.getElementById('dt-collected').textContent = balanceFormatted;
   }, window.balance / 100)
+  window.balance = newBalance;
 });
 
 getDonationData().then(res => {
