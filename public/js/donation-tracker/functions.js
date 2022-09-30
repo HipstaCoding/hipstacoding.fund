@@ -34,11 +34,15 @@ function getDonationData() {
   });
 }
 
+window.balance = 0;
+window.percent = 0;
+
 function render(data) {
   const format = Intl.NumberFormat("uk-UK").format; 
 
   const balance = data.balance / 100;
-  const goalFormatted = format(data.goal / 100);
+  const goal = data.goal / 100;
+  const goalFormatted = format(goal);
   const remains = (data.goal - data.balance) / 100;
   const remainsFormatted = format(remains);
   const percent = Math.ceil(data.balance / data.goal * 100);
@@ -51,11 +55,14 @@ function render(data) {
   animateNumber(balance, (n) => {
     const balanceFormatted = format(n);
     document.getElementById('dt-collected').textContent = balanceFormatted;
-  })
+  }, window.balance);
 
   animateNumber(percent, (n) => {
     const formattedPercent = n + '%';
     document.getElementById('dt-collected-percent').textContent = formattedPercent;
-  })
+  }, window.percent);
+
+  window.balance = balance;
+  window.percent = percent;
 }
 
