@@ -10,10 +10,9 @@ const COMPONENTS_CSS = "views/social-sharing/components.css";
 const STORY_CSS = "views/social-sharing/story.css";
 const VARIABLES_CSS = "views/social-sharing/variables.css";
 const OVERRIDES_CSS = "views/social-sharing/overrides.css";
-const INDEX_CSS = "views/social-sharing/index.css";
 const HERO_IMG = "views/images/mavic3.jpg";
 
-const CSS_FILES = [VARIABLES_CSS, OVERRIDES_CSS, COMPONENTS_CSS, INDEX_CSS, STORY_CSS];
+const CSS_FILES = [VARIABLES_CSS, OVERRIDES_CSS, COMPONENTS_CSS, STORY_CSS];
 
 // TELL ABOUT THIS FUNCTION WHY WE NEED IT
 const getPageTemplate = (pagePath) => fs.readFile(pagePath, { encoding: "utf-8" });

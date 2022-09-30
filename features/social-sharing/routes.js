@@ -22,8 +22,7 @@ router.get("/images/instagram/story", async function (_req, res) {
 });
 
 router.get("/instagram", async function (req, res) {
-  cache.get()
-  res.render("index", {  });
+  res.render("index");
 });
 
 module.exports = router;

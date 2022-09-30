@@ -42,3 +42,22 @@
 .icon-button {
   padding: 12px;
 }
+
+.footer-title {
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 50px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.trezub {
+  margin: 0 auto 100px;
+  /* Describe why block */
+  display: block;
+}

@@ -13,8 +13,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
+a {
+  color: var(--color-violet);
+  text-decoration: none;
+}
+
 button {
   border: none;
+  background: none;
 }
 
 figure {
@@ -24,14 +30,6 @@ figure {
 p {
   margin-top: 0;
   margin-bottom: 10px;
-}
-
-button {
-  background: none;
-}
-
-html {
-  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -52,4 +50,8 @@ section {
 
 section > h2 {
   margin-bottom: 32px;
+}
+
+ul > li {
+  margin-bottom: 1em;
 }
