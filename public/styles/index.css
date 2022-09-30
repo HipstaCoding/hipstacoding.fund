@@ -43,6 +43,10 @@
   padding: 12px;
 }
 
+.contribution .link {
+  text-align: center;
+}
+
 .footer-title {
   font-size: 24px;
   text-align: center;
