@@ -12,7 +12,9 @@ module.exports = async function onSubscribe(data) {
   }
 
   console.log('data.statementItem.balance', data.statementItem.balance);
+
   jar.balance = data.statementItem.balance;
+
   io.emit("donate", jar.balance);
 
   cache.set('jar', jar);

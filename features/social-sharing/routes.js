@@ -11,9 +11,7 @@ router.get("/images/instagram/story", async function (_req, res) {
     getMonobankClientData(),
   ]);
 
-  console.log('2')
   const data = formatMonobankData(jar);
-  console.log('3')
   
   return res.render("social-sharing/story", {
     css,
@@ -24,7 +22,8 @@ router.get("/images/instagram/story", async function (_req, res) {
 });
 
 router.get("/instagram", async function (req, res) {
-  res.render("index");
+  cache.get()
+  res.render("index", {  });
 });
 
 module.exports = router;

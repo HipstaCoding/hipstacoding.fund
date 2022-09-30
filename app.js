@@ -47,15 +47,11 @@ app.use(function (err, req, res, next) {
   next(createError(404));
 });
 
+
 getMonobankClientData()
-  .then((jar) => {
-    console.log('1 JARRR', jar)
-    return createInstagramStoryImage(jar);
-  })
-  .then(() => {
-    console.log('2 JARRR')
-    subscribe()
-  });
+  .then(createInstagramStoryImage)
+  .then(subscribe);
+
 
 // error handler
 app.use(function (err, req, res, next) {
