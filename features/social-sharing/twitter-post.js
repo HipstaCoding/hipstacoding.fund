@@ -10,7 +10,7 @@ const COMPONENTS_CSS = "views/social-sharing/components.css";
 const TWITTER_CSS = "views/social-sharing/twitter.css";
 const VARIABLES_CSS = "views/social-sharing/variables.css";
 const OVERRIDES_CSS = "views/social-sharing/overrides.css";
-const HERO_IMG = "views/images/mavic3.jpg";
+const HERO_IMG = "views/images/hero.jpg";
 
 const CSS_FILES = [VARIABLES_CSS, OVERRIDES_CSS, COMPONENTS_CSS, TWITTER_CSS];
 
