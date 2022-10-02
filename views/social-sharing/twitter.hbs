@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hipsta Coding Fund | Twitter Post</title>
+    <style>
+      @font-face {
+        font-family: 'Montserrat';
+        src: url({{font}}) format('truetype');
+      }
+      {{{css}}}
+    </style>
+  </head>
+  <body>
+    <img src="{{heroImg}}" alt="mavic 3 photo" width="600" height="675" />
+    <main>
+      <h1 class="title">HipstaCoding.school збирає на дрон Mavic 3 для ЗСУ!</h1>
+      <div class="donation-tracker" id="dt">
+        <div class="donation-title">
+          <span class="donation-title-collected">Зібрано (UAH)</span>
+          <span class="donation-title-remains">Залишилось (UAH)</span>
+        </div>
+        <div class="donation-tracker-container">
+          <div class="donation-tracker-collected-bar" style="width:{{percent}}%"></div>
+          <span class="donation-tracker-collected" id="dt-collected">{{collectedFormatted}}</span>
+          <span class="donation-tracker-remains" id="dt-remains">{{remainsFormatted}}</span>
+        </div>
+        <div class="donation-tracker-description">
+          <span class="donation-tracker-collected-%" id="dt-collected-percent">{{percent}}%</span>
+          <span class="donation-tracker-total" id="dt-total">{{totalFormatted}}</span>
+        </div>
+        <div class="disclaimer">
+          * актуальні данні з банки Monobank
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

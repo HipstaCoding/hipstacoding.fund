@@ -1,5 +1,6 @@
 const getMonobankClientData = require("../donation-tracker/getMonobankClientInfo");
 const { createInstagramStoryImage } = require("../social-sharing/instagram-story");
+const { createTwitterPostImage } = require("../social-sharing/twitter-post");
 const io = require("../../io");
 const cache = require('../../utils/cache');
 
@@ -20,4 +21,5 @@ module.exports = async function onSubscribe(data) {
   cache.set('jar', jar);
 
   await createInstagramStoryImage(jar);
+  await createTwitterPostImage(jar);
 }

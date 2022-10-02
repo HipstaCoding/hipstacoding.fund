@@ -16,6 +16,7 @@ const usersRouter = require("./features/subscription/router");
 const ladderRouter = require("./features/ladder/routes");
 const donationTrackerRouter = require("./features/donation-tracker/routes");
 const nocache = require('nocache');
+const { createTwitterPostImage } = require("./features/social-sharing/twitter-post");
 
 const app = express();
 
@@ -49,6 +50,7 @@ app.use(function (err, req, res, next) {
 
 
 getMonobankClientData()
+  .then(createTwitterPostImage)
   .then(createInstagramStoryImage)
   .then(subscribe);
 
