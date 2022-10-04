@@ -2,7 +2,7 @@ const seo = require('./seo.json');
 const wallets = require('./wallets.json');
 
 module.exports = {
-  url: process.env.WEB_URL,
+  url: process.env.API_URL,
   seo,
   wallets
 }
