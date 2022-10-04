@@ -6,17 +6,17 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 
-const { createInstagramStoryImage } = require("./features/social-sharing/instagram-story");
+const { createInstagramStoryImage } = require("./features/sharing/instagram-story");
 const subscribe = require("./features/subscription/subscribe");
 const getMonobankClientData = require("./features/donation-tracker/getMonobankClientInfo");
 
 const indexRouter = require("./routes/index");
-const socialSharingRouter = require("./features/social-sharing/routes");
+const sharingRouter = require("./features/sharing/routes");
 const usersRouter = require("./features/subscription/router");
 const ladderRouter = require("./features/ladder/routes");
 const donationTrackerRouter = require("./features/donation-tracker/routes");
 const nocache = require('nocache');
-const { createTwitterPostImage } = require("./features/social-sharing/twitter-post");
+const { createTwitterPostImage } = require("./features/sharing/twitter-post");
 
 const app = express();
 
@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/ladder", ladderRouter);
-app.use("/social-sharing", socialSharingRouter);
+app.use("/sharing", sharingRouter);
 app.use("/webhook", usersRouter);
 app.use("/donation-tracker", donationTrackerRouter);
 

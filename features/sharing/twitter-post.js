@@ -6,29 +6,27 @@ const formatMonobankData = require("../donation-tracker/formatMonobankData");
 const { imageFromBufferToBase64 } = require("../../utils/toBase64");
 
 const FONTS_CSS = "public/styles/fonts.css";
-const INSTA_STORY_TEMPLATE_HTML = "views/social-sharing/story.hbs";
-const STORY_CSS = "views/social-sharing/story.css";
 const COMPONENTS_CSS = "public/styles/components.css";
 const VARIABLES_CSS = "public/styles/variables.css";
 const OVERRIDES_CSS = "public/styles/overrides.css";
 const HERO_IMG = "public/images/hero.jpg";
+const TWITTER_CSS = "public/styles/sharing/twitter.css";
 
-const CSS_FILES = [FONTS_CSS, VARIABLES_CSS, OVERRIDES_CSS, COMPONENTS_CSS, STORY_CSS];
+const TWITTER_POST_TEMPLATE_HTML = "views/sharing/twitter.hbs";
+
+const CSS_FILES = [FONTS_CSS, VARIABLES_CSS, OVERRIDES_CSS, COMPONENTS_CSS, TWITTER_CSS];
 
 // TELL ABOUT THIS FUNCTION WHY WE NEED IT
 const getPageTemplate = (pagePath) => fs.readFile(pagePath, { encoding: "utf-8" });
 
-const getInstaStoryParams = async () => {
-  console.log("getInstaStoryParams 0");
+const getTwitterPostParams = async () => {
   const font = await font2base64.encodeToDataUrl("public/fonts/fonts.ttf");
-  console.log("getInstaStoryParams 1");
-  const cssFilesContent = CSS_FILES.map((path) => fs.readFile(path, { encoding: "utf-8" }));
   const [imageContent, ...cssPages] = await Promise.all(
-    [fs.readFile(HERO_IMG)].concat(cssFilesContent)
+    [fs.readFile(HERO_IMG)].concat(
+      CSS_FILES.map((path) => fs.readFile(path, { encoding: "utf-8" }))
+    )
   );
-  console.log("getInstaStoryParams 2");
   const css = cssPages.join("\n");
-  console.log("cssFilesContent", css);
   const heroImg = imageFromBufferToBase64(imageContent);
 
   return {
@@ -38,13 +36,16 @@ const getInstaStoryParams = async () => {
   };
 };
 
-async function createInstagramStoryImage(jar) {
-  const promises = [getInstaStoryParams(), getPageTemplate(INSTA_STORY_TEMPLATE_HTML)];
+async function createTwitterPostImage(jar) {
+  const promises = [
+    getTwitterPostParams(),
+    getPageTemplate(TWITTER_POST_TEMPLATE_HTML),
+  ];
   const [{ font, css, heroImg }, page] = await Promise.all(promises);
 
   const data = formatMonobankData(jar);
   await nodeHtmlToImage({
-    output: "public/images/story.jpg",
+    output: "public/images/twitter.jpg",
     html: page,
     puppeteerArgs: {
       args: ["--no-sandbox"],
@@ -61,6 +62,6 @@ async function createInstagramStoryImage(jar) {
 }
 
 module.exports = {
-  createInstagramStoryImage,
-  getInstaStoryParams,
+  createTwitterPostImage,
+  getTwitterPostParams,
 };

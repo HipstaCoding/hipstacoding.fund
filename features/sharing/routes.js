@@ -14,7 +14,7 @@ router.get("/images/instagram/story", async function (_req, res) {
 
   const data = formatMonobankData(jar);
   
-  return res.render("social-sharing/story", {
+  return res.render("sharing/story", {
     css,
     heroImg,
     font,
@@ -30,7 +30,7 @@ router.get("/images/twitter", async function (_req, res) {
 
   const data = formatMonobankData(jar);
   
-  return res.render("social-sharing/twitter", {
+  return res.render("sharing/twitter", {
     css,
     heroImg,
     font,
