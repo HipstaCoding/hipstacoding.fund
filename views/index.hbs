@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hipsta Coding Fund | {{seo.title}}</title>
-  <meta property="og:description" content="{{seo.description}}" />
-  <meta property="og:title" content="Hipsta Coding Fund | {{seo.title}}">
+  <title>Hipsta Coding Fund | {{jar.title}}</title>
+  <meta property="og:description" content="{{jar.description}}" />
+  <meta property="og:title" content="Hipsta Coding Fund | {{jar.title}}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{url}}">
   <meta property="og:image" content="{{url}}/images/twitter.jpg">
@@ -49,7 +49,7 @@
   </header>
   <main>
     <section class="content">
-      <h1>HipstaCoding.school збирає на дрон Mavic 3 для ЗСУ!</h1>
+      <h1>Hipsta Coding збирає на дрон Mavic 3 для ЗСУ!</h1>
       <div class="donation-tracker" id="dt">
         <div class="donation-title">
           <span class="donation-title-collected">Зібрано (UAH)</span>
@@ -58,11 +58,11 @@
         <div class="donation-tracker-container">
           <div class="donation-tracker-collected-bar"></div>
           <span class="donation-tracker-collected" id="dt-collected">0</span>
-          <span class="donation-tracker-remains" id="dt-remains">0</span>
+          <span class="donation-tracker-remains" id="dt-remains">{{jar.remainsFormatted}}</span>
         </div>
         <div class="donation-tracker-description">
           <span class="donation-tracker-collected-%" id="dt-collected-percent">0%</span>
-          <span class="donation-tracker-total" id="dt-total">83 000</span>
+          <span class="donation-tracker-total" id="dt-total">{{jar.totalFormatted}}</span>
         </div>
         <div class="disclaimer">
           * актуальні данні з банки Monobank

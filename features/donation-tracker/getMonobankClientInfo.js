@@ -12,7 +12,6 @@ async function getMonobankClientData() {
   const cachedJar = cache.get('jar');
   
   if (cachedJar) return cachedJar;
-
   const infoResponse = await fetch('https://api.monobank.ua/personal/client-info', {
     headers: {
       'X-Token':  process.env.TOKEN,
@@ -37,6 +36,7 @@ async function getMonobankClientData() {
   if (!jar) throw Error();
   
   cache.set('jar', jar);
+  console.log('jar', jar)
   
   return jar;
 }

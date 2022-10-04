@@ -11,6 +11,7 @@ module.exports = function formatMonobankData(data) {
   const totalFormatted = format(total);
 
   return {
+    ...data,
     collected,
     collectedFormatted,
     goalFormatted,
