@@ -10,7 +10,6 @@ function getJar(data, bankaID) {
 async function getMonobankClientData() {
   const bankaID = process.env.BANKA_ID;
   const cachedJar = cache.get('jar');
-  console.log('if cachedResponse exists', !!cachedJar)
   
   if (cachedJar) return cachedJar;
 

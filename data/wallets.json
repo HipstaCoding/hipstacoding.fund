@@ -1,0 +1,20 @@
+[
+  {
+    "id": "PayPal",
+    "name": "PayPal",
+    "account": "elon@hipstacoding.fund",
+    "description": "На ім'я: Олексій С."
+  },
+  {
+    "id": "kartka-monobanku",
+    "name": "Картка монобанку",
+    "account": "5375 4112 0170 9628",
+    "description": "Банка \"На Mavic 3 для ЗСУ\" від Олексія С."
+  },
+  {
+    "id": "banka-monobanku",
+    "name": "Банка монобанку",
+    "account": "https://send.monobank.ua/jar/3xqXDhtdzj",
+    "description": "На Mavic 3 для ЗСУ"
+  }
+]

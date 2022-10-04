@@ -72,57 +72,22 @@
       <a class="mono-pay" href="https://send.monobank.ua/jar/3xqXDhtdzj"></a>
     </section>
     <section class="requisites">
-      <h2 class="requisites-titles">Додаткові реквезити**:</h2>
-      <p class="disclaimer">** не будуть відображатись у треку</p>
-      <div class="requisite monobank">
-        <label for="monobank" data-clipboard-target="#monobank">
-          Monobank
+      <h2 class="requisites-titles">Додаткові гаманці**:</h2>
+      <p class="disclaimer">** можуть не отображатись в треку</p>
+      {{#each wallets}} 
+      <div class="requisite {{this.id}}">
+        <label for="{{this.id}}" data-clipboard-target="{{this.id}}">
+          {{this.name}}
           <div class="requisite-field-container">
-            <input id="monobank" class="requisite-field" value="4242 4242 4242 4242" readonly>
+            <input id="{{this.id}}" class="requisite-field" value="{{this.account}}" readonly>
             <button class="requisite-copy-icon">
               <i class="fa-regular fa-copy fa-xl"></i>
             </button>
           </div>
-          На ім'я: Олексій Шипінов
+          {{this.description}}
         </label>
       </div>
-      <div class="requisite privatbank">
-        <label for="privatbank" data-clipboard-target="#privatbank">
-          PrivatBank
-          <div class="requisite-field-container">
-            <input id="privatbank" class="requisite-field" value="4444 4444 4444 4444" readonly>
-            <button class="requisite-copy-icon">
-              <i class="fa-regular fa-copy fa-xl"></i>
-            </button>
-          </div>
-          На ім'я: Олексій Шипінов
-        </label>
-      </div>
-      <div class="requisite paypal">
-        <label for="paypal" data-clipboard-target="#paypal">
-          PayPal
-          <div class="requisite-field-container">
-            <input id="paypal" class="requisite-field" value="elon@hipstacoding.fund" readonly>
-            <button class="requisite-copy-icon">
-              <i class="fa-regular fa-copy fa-xl"></i>
-            </button>
-          </div>
-          На ім'я: Олексій Шипінов
-        </label>
-      </div>
-      <div class="requisite banka">
-        <label for="banka-monobanka" data-clipboard-target="#banka-monobanka">
-          Банка монобанку
-          <div class="requisite-field-container">
-            <input id="banka-monobanka" class="requisite-field" value="lewkan@hipstacoding.fund"
-              readonly>
-            <button class="requisite-copy-icon">
-              <i class="fa-regular fa-copy fa-xl"></i>
-            </button>
-          </div>
-          На дрон Mavic 3
-        </label>
-      </div>
+      {{/each}}
     </section>
     <section class="info">
       <h2>Інформаційна допомога</h2>
