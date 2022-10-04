@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const wallets = require("../data/wallets.json");
+const data = require("../data");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('wallets', wallets)
-  res.render('index', { wallets });
+  console.log('data', data)
+  res.render('index', { ...data });
 });
 
 

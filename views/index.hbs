@@ -5,17 +5,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Hipsta Coding Fund | Збір на дрон">
+  <title>Hipsta Coding Fund | {{seo.title}}</title>
+  <meta property="og:description" content="{{seo.description}}" />
+  <meta property="og:title" content="Hipsta Coding Fund | {{seo.title}}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hipstacoding-fund.herokuapp.com">
-  <meta property="og:image" content="https://hipstacoding-fund.herokuapp.com/images/twitter.jpg">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="{{url}}/images/twitter.jpg">
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpg" />
-  <meta property="og:description"
-    content="В HipstaCoding.School ми створили дуже зручну сторінку, щоби зібрати гроші на дрон, а ви могли зручно слідкувати, та ширити посилання на цей збір!" />
   <meta name="twitter:card" content="summary_large_image">
-  <title>Hipsta Coding Fund | Збір на дрон</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -74,7 +73,7 @@
     <section class="requisites">
       <h2 class="requisites-titles">Додаткові гаманці**:</h2>
       <p class="disclaimer">** можуть не отображатись в треку</p>
-      {{#each wallets}} 
+      {{#each wallets}}
       <div class="requisite {{this.id}}">
         <label for="{{this.id}}" data-clipboard-target="{{this.id}}">
           {{this.name}}
@@ -148,7 +147,7 @@
       <p class="copyright">® hipstacoding.fund розповсюджується за ліцензію MIT, тобто “як є”,
         безкоштовно розташовує матеріали, дає відкритий доступ до коду, але не несе ніяких гарантій.
       </p>
-      <p class="copyright">2022 @ hipstacoding.school</p>
+      <p class="copyright">2022 @ hipstacoding.fund</p>
       <img class="trezub" src="/images/trezub.svg" width="44" height="66">
     </footer>
   </main>
