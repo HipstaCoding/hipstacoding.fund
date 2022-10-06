@@ -1,0 +1,7 @@
+{
+  "name": "HipstaCoding.fund",
+  "description": "Website for donations to Ukrainian volunteers",
+  "repository": "https://github.com/HipstaCoding/hipstacoding.fund",
+  "logo": "https://hipstacoding-fund.herokuapp.com/images/Favicon.png",
+  "keywords": ["node", "express", "html", "javascript", "monobank-api"]
+}
