@@ -9,10 +9,13 @@ router.get("/", function (req, res, next) {
   return getMonobankClientData()
     .then(formatMonobankData)
     .then((formattedJar) => {
-      console.log("formattedJar", formattedJar);
-      res.render("index", { ...data, jar: formattedJar });
+      const message = encodeURIComponent(formattedJar.description + '\n' + data.url); 
+      res.render("index", { ...data, jar: formattedJar, social: { message } });
     })
-    .catch(next);
+    .catch((err) => {
+      console.log('err', err)
+      next(err)
+    });
 });
 
 module.exports = router;
