@@ -14,8 +14,8 @@ function animateNumber(number, onAnimate, start = 0) {
 
     if (elapsed > ANIMATION_TIME) return;
 
-    let delta = easeOutSine(elapsed / ANIMATION_TIME);
-
+    let delta = easeOutSine(elapsed / ANIMATION_TIME).toFixed(2);
+    console.log('delta', delta)
     currentNumber = start + Math.ceil((number - start) * delta);
 
     onAnimate(currentNumber);
@@ -43,7 +43,7 @@ function render(data) {
   const balance = data.balance / 100;
   const goal = data.goal / 100;
   const goalFormatted = format(goal);
-  const remains = (data.goal - data.balance) / 100;
+  const remains = ((data.goal - data.balance) / 100).toFixed(0);
   const remainsFormatted = format(remains);
   const percent = Math.ceil(data.balance / data.goal * 100);
   const formattedPercent = percent + '%';
