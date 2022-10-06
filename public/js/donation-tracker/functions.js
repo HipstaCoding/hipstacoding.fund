@@ -27,7 +27,7 @@ function animateNumber(number, onAnimate, start = 0) {
 }
 
 function getDonationData() {
-  return fetch('https://hipstacoding-fund.herokuapp.com/donation-tracker').then((res) => {
+  return fetch('/donation-tracker').then((res) => {
     if (!res.ok) return alert('error', res.status);
     
     return res.json();
